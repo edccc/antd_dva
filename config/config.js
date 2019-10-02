@@ -81,6 +81,7 @@ export default {
   },
   devtool: isAntDesignProPreview ? 'source-map' : false,
   // umi routes: https://umijs.org/zh/guide/router.html
+  //KAISHI
   routes: [
     {
       path: '/user',
@@ -111,13 +112,42 @@ export default {
               name: 'welcome',
               icon: 'smile',
               component: './Welcome',
+              routes: [
+                {
+                  path: '/dashboard/analysis',
+                  name: 'analysis',
+                  exact: true,
+                },
+                {
+                  path: '/dashboard/monitor',
+                  name: 'monitor',
+                  exact: true,
+                },
+                {
+                  path: '/dashboard/workplace',
+                  name: 'workplace',
+                  exact: true,
+                },
+              ],
             },
             {
               path: '/test1',
               name: 'test1',
-              icon: 'smile',
-              component: './ww/ww',
+              icon: 'yuque',
+              routes: [
+                {
+                  path: '/test1/ww_1',
+                  name: 'ww_1',
+                  component: './ww/ww_1',
+                },
+                {
+                  path: '/test1/ww_2',
+                  name: 'ww_2',
+                  component: './ww/ww',
+                },
+              ],
             },
+
             {
               component: './404',
             },
